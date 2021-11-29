@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class Cadastro extends StatelessWidget {
 
-  TextStyle ts20Black = const TextStyle(
+  TextStyle styleText20 = const TextStyle(
     fontSize: 20.0,
     decoration: TextDecoration.none,
     fontFamily: 'Arial',
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle ts18 = const TextStyle(
-    fontSize: 18.0,
+  TextStyle styleText16 = const TextStyle(
+    fontSize: 16.0,
     decoration: TextDecoration.none,
     fontFamily: 'Arial',
     fontWeight: FontWeight.bold,
@@ -18,121 +18,102 @@ class Cadastro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-
-      child: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
-        color: Colors.white,
-        child: Column(
+    return Column(
+      children: <Widget>[
+        Container(
+          alignment: Alignment.topLeft,
+          margin: const EdgeInsets.only(
+            left: 10.0,
+            top: 10.0,
+          ),
+          child: Text(
+            "TELA DE CADASTRO",
+            style: styleText20,
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: const EdgeInsets.only(
+            left: 10.0,
+            top: 20.0,
+          ),
+          child: Text(
+            "NOME:",
+            style: styleText16,
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: EdgeInsets.all(10.0),
+          child: const TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Digite o nome',
+            ),
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: const EdgeInsets.only(
+            left: 10.0,
+            top: 20.0,
+          ),
+          child: Text(
+            "ENDEREÇO:",
+            style: styleText16,
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: EdgeInsets.all(10.0),
+          child: const TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Digite o endereço',
+            ),
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: const EdgeInsets.only(
+            left: 10.0,
+            top: 20.0,
+          ),
+          child: Text(
+            "eMAIL:",
+            style: styleText16,
+          ),
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          margin: EdgeInsets.all(10.0),
+          child: const TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Digite o email',
+            ),
+          ),
+        ),
+        Row(
           children: <Widget>[
-
-            Row(
-              children: <Widget>[
-                // const SizedBox(height: 50),
-                Expanded(
-                  child: Text(
-                    'TELA DE CADASTRO',
-                    style: ts20Black,
-                  ),
-                ),
-              ],
+            Spacer(),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("CANCELAR"),
+              ),
             ),
-            Padding(padding: const EdgeInsets.all(15.0)),
-
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'NOME:',
-                    style: ts18,
-                  ),
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("SALVAR"),
+              ),
             ),
-            Row(
-              children: const <Widget>[
-                Expanded(
-                  child: TextField(
-                    decoration:
-                      InputDecoration(border: OutlineInputBorder(),
-                      labelText: 'Digite o nome'),
-                  )
-                ),
-              ],
-            ),
-            const Padding(padding: EdgeInsets.all(15.0)),
-
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'ENDEREÇO:',
-                    style: ts18,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: const <Widget>[
-                Expanded(
-                    child: TextField(
-                      decoration:
-                      InputDecoration(border: OutlineInputBorder(),
-                          labelText: 'Digite o endereço'),
-                    )
-                ),
-              ],
-            ),
-            const Padding(padding: EdgeInsets.all(15.0)),
-
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'eMAIL:',
-                    style: ts18,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: const <Widget>[
-                Expanded(
-                    child: TextField(
-                      decoration:
-                      InputDecoration(border: OutlineInputBorder(),
-                          labelText: 'Digite o email'),
-                    )
-                ),
-              ],
-            ),
-
-            Row(
-              children: <Widget>[
-                Spacer(),
-                Container(
-                  margin: const EdgeInsets.only(top: 50.0, right: 20),
-                  child: ElevatedButton(
-                    child: Text("CANCELAR"),
-                    onPressed: () {
-                    },
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 50.0, right: 20),
-                  child: ElevatedButton(
-                    child: Text("SALVAR"),
-                    onPressed: () {
-                    },
-                  ),
-                ),
-              ],
-            ),
-
           ],
         ),
-      ),
+      ],
     );
   }
 }
